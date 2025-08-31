@@ -14,7 +14,7 @@ int run_bgv(int n_test, int security_level)
 {
     // Parámetros
     unsigned long p = 65537;
-    unsigned long m = 32768; // n de homomorphicstandard
+    unsigned long m = 32768*2; // n de homomorphicstandard
     unsigned long r = 1; // Por defecto
     // Numbero de bits q según la seguridad
     unsigned long bits;
@@ -26,7 +26,7 @@ int run_bgv(int n_test, int security_level)
             std::cerr << "Nivel de seguridad inválido.\n";
             return 1;
       }
-    unsigned long c_keyswtich = 2; // nummero de columnas de keyswitch lo dejo por defecto
+    unsigned long c_keyswtich = 1; // nummero de columnas de keyswitch lo dejo por defecto
     std::chrono::high_resolution_clock::time_point start, finish;
     // Creo los polinomios que voy a multiplicar y sumar
     std::vector<int64_t> a = {12,2345,65222,44,5913,65505,65,1987,65520,20};

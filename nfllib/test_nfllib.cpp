@@ -7,7 +7,6 @@
 
 #define N_POLINOMIOS 10 // En cada test creamos 10 polinomios
 #define REPETICIONES 10 // Vamos a hacer 10 repeticiones por test
-#define SIGMA 4 // Desviación normal de la distribución gaussiana. (https://github.com/quarkslab/NFLlib/blob/5cf40ed6a4929bfc304f3283aafd62c4149c55e2/tests/nfllib_demo_main_op.cpp)
 
 #define CSV_FILE "statistics.csv"
 #define LIBRERIA "nfllib" // Utilizada para saber a qué librería pertenece

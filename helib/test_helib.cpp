@@ -16,15 +16,8 @@ template<size_t modulus>
 int run_poly(int n_test) {
     // Parámetros similares a NFLlib
     long degree = 256;        // grado polinomio
-    long p, c;
-    if (modulus == 62){       // En el caso de 62 bits dde módulo da error, entonces lo que hago es fijarlo a 44 que no dda error
-        p = NTL::GenPrime_long(44);
-        c = 2; // La c lo fijo a 2 commo si fueran dos primos de 44 bits
-    }else{
-        p = NTL::GenPrime_long(modulus);
-        c = 1;  // La c la fijo a 1 comoo si fuera un únio primo de 44 bits
-    }
-    //std::cout << p << std::endl;
+    long p = 65537;           // Móulo plaintext estándar
+    long c = 1;               // columns de la mmatriz Key-Switching matrix 
     long r = 1;               // potencia de p
     long m = 512;             // orden ciclotómico, phi(512) >= 256 (grado)
 
@@ -34,7 +27,7 @@ int run_poly(int n_test) {
                        .p(p)
                        .r(r)
                        .c(c)
-                       .bits(44) // tamaño de primos CRT, similar paper
+                       .bits(modulus) // tamaño de primos CRT
                        .build();
 
     // Para los tiempos
